@@ -1,0 +1,70 @@
+
+window.onload = function(){
+
+	function downloadVideo(){
+		var dl = document.getElementById("videoDownloadDropdown");
+		if(dl.className.indexOf("shown") > -1){
+			dl.className = dl.className.replace("shown", "");
+		}else{
+			dl.className += "shown";
+		}
+	}
+
+	function downloadURI(event){
+		event.preventDefault();
+		event.stopPropagation();
+
+		var url = event.currentTarget.getAttribute("href");
+		var name = document.getElementsByTagName("title")[0].innerText;
+		var datatype = event.currentTarget.getAttribute("data-type");
+		var data = {url: url, name: name, sender: "YTDL", type: datatype};
+
+		window.postMessage(data, "*");
+
+		var dl = document.getElementById("videoDownloadDropdown");
+		if(dl.className.indexOf("shown") > -1){
+			dl.className = dl.className.replace("shown", "");
+		}else{
+			dl.className += "shown";
+		}
+		return false;
+	}
+
+	var videoUrls = window.ytplayer.config.args.url_encoded_fmt_stream_map.split(",").map(function(item){
+		return item.split("&").reduce(function(pre, cur){
+			cur = cur.split("=");
+			console.log(pre, cur);
+			return Object.assign(pre, {[cur[0]]: decodeURIComponent(cur[1])}); 
+		}, {});
+	});
+	console.log("Our extension is loaded", videoUrls);
+	var container = document.getElementById("top-level-buttons");
+	console.log(container);
+	var btn = document.createElement("ytd-button-renderer");
+	btn.className = "style-scope ytd-menu-renderer force-icon-button style-default size-default";
+	btn.id = "downloadVideo";
+	btn.setAttribute("role", "button");
+	btn.innerText = "DOWNLOAD";
+
+	var dropdown = document.createElement("div");
+	dropdown.id = "videoDownloadDropdown";
+	container.appendChild(dropdown);
+
+	var dropList = document.createElement("ul");
+	dropdown.appendChild(dropList);
+
+	container.appendChild(btn);
+
+	for(i in videoUrls){
+		var item = document.createElement("a");
+		var ext = videoUrls[i]["type"].split("/")[1].split(";")[0];
+		item.innerText = videoUrls[i] ["quality"].toUpperCase() + " (" + ext + ")";
+
+		item.setAttribute("href", videoUrls[i]["url"]);
+		item.setAttribute("target", "_blank");
+		item.setAttribute("data-type", videoUrls[i]["type"]);
+		item.addEventListener("click", downloadURI);
+		dropList.appendChild(item);
+	}
+	document.getElementById("downloadVideo").addEventListener("click", downloadVideo);
+};

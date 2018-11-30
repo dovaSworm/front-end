@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Pipboy</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link href="css/pipboy.css" rel="stylesheet">
+</head>
+<body>
+	<!--<img id="frame-left" src="img/frameleft.png"> 
+	<img id="frame-right" src="img/frameright.png">
+	<img id="frame-top" src="img/frameup.png">
+	<img id="frame-bottom" src="img/framedown.png"> -->
+
+
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="collapse navbar-collapse" id="mainNavbar">
+			<ul class="navbar-nav  nav-fill">
+				<li class="navbar-item">
+					<a href="index.html" class="nav-link">STAT</a>
+				</li>
+				<li class="navbar-item">
+					<a href="inv.html" class="nav-link">INV</a>
+				</li>
+				<li class="navbar-item active">
+					<a href="data.html" class="nav-link">DATA</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#" class="nav-link">MAP</a>
+				</li>
+				<li class="navbar-item">
+					<a href="#" class="nav-link">RADIO</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col 12">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a href="#status" data-toggle="tab" class="nav-link" role="tab">STATUS</a>
+					</li>
+					<li class="nav-item">
+						<a href="#special" class="nav-link" data-toggle="tab">SPECIAL</a>
+					</li>
+					<li class="nav-item">
+						<a href="#perks" class="nav-link" data-toggle="tab">PERKS</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="status" role="tabpanel">
+						<div class="center-image">
+							<img src="img/waltboy.png"/>
+						</div>
+
+						<div class="stat-bars">
+							<div class="row">
+								<div class="col-12">
+									<div class="stat-bar">
+										<div class="progress-bar">
+											<div class="progress-bar-indicator wpb90"></div>
+										</div>
+									</div>	
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-3">
+									<div class="stat-bar">
+										<div class="progress-bar">
+											<div class="progress-bar-indicator wpb10"></div>
+										</div>
+									</div>	
+								</div>
+								<div class="col-6">
+										
+								</div>
+								<div class="col-3">
+									<div class="stat-bar">
+										<div class="progress-bar">
+											<div class="progress-bar-indicator wpb30"></div>
+										</div>
+									</div>	
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-3">
+									<div class="stat-bar">
+										<div class="progress-bar">
+											<div class="progress-bar-indicator"></div>
+										</div>
+									</div>	
+								</div>
+								<div class="col-6">
+										
+								</div>
+								<div class="col-3">
+									<div class="stat-bar">
+										<div class="progress-bar">
+											<div class="progress-bar-indicator wpb60"></div>
+										</div>
+									</div>	
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-12">
+									<div class="stat-bar">
+										<div class="progress-bar">
+											<div class="progress-bar-indicator"></div>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row stat-numbers">
+							<div class="col-2 transparent"></div>
+
+							<div class="col-2">
+								<img src="img/pistolo.png" class="img-responsive">
+							</div>
+							<div class="col-1">
+								<div class="icon">
+									<img src="img/crosshair2.png">
+								</div>
+								<div class="points">19</div>
+							</div>
+
+							<div class="col-1 transparent"></div>
+
+							<div class="col-2">
+								<img src="img/helmet.png" class="img-responsive">
+							</div>
+							<div class="col-1">
+								<div class="icon">
+									<img src="img/charge.png">
+								</div>
+								<div class="points">19</div>
+							</div>
+
+							<div class="col-1">
+								<div class="icon">
+									<img src="img/radiation.png">
+								</div>
+								<div class="points">19</div>
+							</div>
+
+							<div class="col-2 transparent"></div>
+						</div>
+
+
+
+
+					</div>
+
+					<div class="tab-pane" id="special" role="tabpanel">
+						<div class="center-image">
+							<img src="img/angry.jpg"/>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="progress-bar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="perks" role="tabpanel">
+						PERKS
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<navbar class="navbar pip-footer">
+		<div class="row">
+			<div class="col-3">
+				HP 90/90
+			</div>
+			<div class="col-6">
+				<span>LEVEL 1</span> 
+					<div class="progress-bar" >
+						<div class="progress-bar-indicator"></div>
+					</div>
+			</div>
+			<div class="col-3 text-right">
+				AP 70/70
+			</div>
+		</div>
+	</navbar>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="js/pipboy.js" type="text/javascript"></script>
+
+
+</body>
+</html>
